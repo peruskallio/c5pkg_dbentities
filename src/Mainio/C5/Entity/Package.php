@@ -187,13 +187,6 @@ class Package extends \Concrete\Core\Package\Package
      * This drops all the tables related to this package based on the database
      * tables of the package entities.
      */
-    /**
-     * Do not normally call this during a package uninstall. Save this for 
-     * special occasions.
-     * 
-     * This drops all the tables related to this package based on the database
-     * tables of the package entities.
-     */
     public function uninstallDatabase()
     {
         $classes = $this->getPackageEntities();
