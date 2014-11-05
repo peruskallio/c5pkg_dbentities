@@ -1,0 +1,28 @@
+{
+    "name": "mainio/c5-dbentities",
+    "type": "library",
+    "description": "Gives some basic DB entity utilities for concrete5 packages.",
+    "keywords": ["concrete5", "database", "entity"],
+    "homepage": "http://www.mainiotech.fi",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antti Hukkanen",
+            "email": "antti.hukkanen@mainiotech.fi",
+            "homepage": "http://www.mainiotech.fi"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0" : {
+            "Mainio\\C5\\Entity\\" : "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
