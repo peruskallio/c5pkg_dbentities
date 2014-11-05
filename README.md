@@ -28,7 +28,7 @@ classes during the development phase of the package.
 ## How to use
 
 1. Add this library through this git repo to the composer.json of your package
-   and run "composer install"
+   and run `composer install`
 2. Make your Package class extend \Mainio\C5\Entity\Package
 3. Create your entities within the /src/Entities directory
 4. Add the following configuration to your /config/app.php:
