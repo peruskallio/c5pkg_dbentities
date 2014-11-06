@@ -27,10 +27,10 @@ classes during the development phase of the package.
 
 ## How to use
 
-1. Add this library through this git repo to the composer.json of your
-   concrete5 package (located at the root of your package folder) and run 
-   `composer install`. In its simplest form, your compser.json could look like
-   this:
+First of all, add this library through this git repo to the composer.json of
+your concrete5 package (located at the root of your package folder). In its
+simplest form, your compser.json could look like this when including this
+library through this git repo:
 ```json
 {
     "repositories": [
@@ -48,12 +48,15 @@ classes during the development phase of the package.
     }
 }
 ```
-2. Run `composer install` in the root of your package folder to install the
+
+After that, do this:
+
+1. Run `composer install` in the root of your package folder to install the
    composer dependencies into the `vendor` directory of your concrete5 package
-3. Make your Package class extend \Mainio\C5\Entity\Package
-4. Create your package entities within the /src/Entities directory within your
+2. Make your Package class extend \Mainio\C5\Entity\Package
+3. Create your package entities within the /src/Entities directory within your
    package folder
-5. Add the following configuration to your /config/app.php:
+4. Add the following configuration to your /config/app.php:
 ```php
 return array(
     // ...
