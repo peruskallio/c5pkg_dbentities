@@ -50,10 +50,10 @@ classes during the development phase of the package.
 ```
 2. Run `composer install` in the root of your package folder to install the
    composer dependencies into the `vendor` directory of your concrete5 package
-2. Make your Package class extend \Mainio\C5\Entity\Package
-3. Create your package entities within the /src/Entities directory within your
+3. Make your Package class extend \Mainio\C5\Entity\Package
+4. Create your package entities within the /src/Entities directory within your
    package folder
-4. Add the following configuration to your /config/app.php:
+5. Add the following configuration to your /config/app.php:
 ```php
 return array(
     // ...
