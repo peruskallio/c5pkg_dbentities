@@ -27,10 +27,32 @@ classes during the development phase of the package.
 
 ## How to use
 
-1. Add this library through this git repo to the composer.json of your package
-   and run `composer install`
+1. Add this library through this git repo to the composer.json of your
+   concrete5 package (located at the root of your package folder) and run 
+   `composer install`. In its simplest form, your compser.json could look like
+   this:
+```json
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/mainio/c5pkg_dbentities.git"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "mainio/c5-dbentities": "dev-master"
+    }
+}
+```
+2. Run `composer install` in the root of your package folder to install the
+   composer dependencies into the `vendor` directory of your concrete5 package
 2. Make your Package class extend \Mainio\C5\Entity\Package
-3. Create your entities within the /src/Entities directory
+3. Create your package entities within the /src/Entities directory within your
+   package folder
 4. Add the following configuration to your /config/app.php:
 ```php
 return array(
@@ -47,6 +69,7 @@ permissions required for it to happen.
 
 An example on how to use this package is available as a reference
 implementation in the following repository:
+
 https://github.com/mainio/c5_entities_example
 
 
