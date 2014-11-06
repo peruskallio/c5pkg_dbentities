@@ -2,20 +2,29 @@
 
 This package provides simple classes to enable the use of Doctrine entities
 within concrete5 package context. This only works within the concrete5 context
-which means that this cannot be used as a standalone package.
+which means that this cannot be used as a standalone package. It is always
+required that these classes are used in the concrete5 context.
 
-This is only provided as an example implementation of how this could be done
-within the concrete5 package context. We have no plans to publis this into
-Packagist since we hope the functionality that this provides will become part
-of the concrete5 core at some point. But for now (concrete5.7.2), we need some
-external solution to make this possible.
+This is provided as an example implementation of how this could be done within
+the concrete5 package context. We have no plans to publish this into Packagist
+since we hope the functionality that this provides will become part of the
+concrete5 core at some point. But for now (concrete5.7.2), we need some
+external solution to make this possible. And we use this solution currently
+ourselves until the core will provide similar functionality.
 
+
+## About the classes
+
+
+### Mainio\C5\Entity\Entity
 The Entity class provided within this package is a simple class that allows
 accessing the entity variables from outside of the class. All package's entity
 classes should extend this class. It also allows protecting certain class
 variables to be read or written (or both) from outside of that Entity class.
 Please see the class comments for further information.
 
+
+### Mainio\C5\Entity\Package
 The Package class is a base package class that extends the concrete5's internal
 Package class. This class provides additional functionality related to the
 package's entity management. This functionality includes providing a package
