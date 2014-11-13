@@ -47,7 +47,7 @@ abstract class Entity
 
     public function __get($name)
     {
-        $this->get($name);
+        return $this->get($name);
     }
 
     public function __set($name, $value)
