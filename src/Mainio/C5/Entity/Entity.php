@@ -31,18 +31,28 @@ abstract class Entity
     protected $protectRead = array();
     protected $protectWrite = array();
 
-    public function __get($name)
+    public function get($name)
     {
         if(property_exists($this, $name) && !in_array($name, $this->protect) && !in_array($name, $this->protectRead)) {
             return $this->$name;
         }
     }
 
-    public function __set($name, $value)
+    public function set($name, $value)
     {
         if(property_exists($this, $name) && !in_array($name, $this->protect) && !in_array($name, $this->protectWrite)) {
             $this->$name = $value;
         }
+    }
+
+    public function __get($name)
+    {
+        $this->get($name);
+    }
+
+    public function __set($name, $value)
+    {
+        $this->set($name, $value);
     }
 
 }
