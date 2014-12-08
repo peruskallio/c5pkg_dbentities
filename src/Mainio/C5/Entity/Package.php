@@ -263,7 +263,13 @@ class Package extends \Concrete\Core\Package\Package
 
     public function getPackageEntities()
     {
-        return $this->getPackageEntitiesInDir($this->getPackagePath() . '/src/Entity');
+        //Get classes from the MetaDataFactory
+         $classes = Array();
+        /** @var ClassMetadata $metaData */
+        foreach ($this->entityManager->getMetadataFactory()->getAllMetadata() as $metaData) {
+            $classes[] = $metaData->getName();
+        }
+        return $classes;
     }
 
     public function getPackageProxiesPath()
@@ -276,33 +282,6 @@ class Package extends \Concrete\Core\Package\Package
         $config->setProxyDir($this->getPackageProxiesPath());
     }
 
-    protected function getPackageEntitiesInDir($dir)
-    {
-        $classes = array();
-        
-        if (is_dir($dir)) {
-            $end = '/src/Entity';
-            $subdir = substr($dir, strrpos($dir, $end)+strlen($end));
-            
-            $cls = get_class($this);
-            $ns = substr($cls, 0, strrpos($cls, '\\')) . '\Src\Entity' . str_replace('/', '\\', $subdir);
-            
-            if ($handle = opendir($dir)) {
-                while (false !== ($entry = readdir($handle))) {
-                    if ($entry != '.' && $entry != '..') {
-                        $target = $dir . '/' . $entry;
-                        if (is_dir($target)) {
-                            $classes = array_merge($classes, $this->getPackageEntitiesInDir($target));
-                        } else {
-                            $classes[] = $ns . '\\' . substr($entry, 0, strrpos($entry, '.'));
-                        }
-                    }
-                }
-                closedir($handle);
-            }
-        }
-
-        return $classes;
-    }
+  
 
 }
