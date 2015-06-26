@@ -1,3 +1,14 @@
+# IMPORTANT UPDATE AFTER CONCRETE5.7.4
+
+We got all the functionality provided by this package merged into the core,
+so this is no longer required for using Doctrine entities within your packages.
+Please see our [reference implementation](https://github.com/mainio/c5_entities_example)
+on how to use Doctrine entities within a concrete5 package if that is what you
+are looking for.
+
+This all works out of the box for all concrete5 versions after 5.7.4.
+
+
 # Doctrine Entities for concrete5 Packages
 
 This package provides simple classes to enable the use of Doctrine entities
